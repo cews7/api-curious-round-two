@@ -24,6 +24,8 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'bootstrap-sass', '~> 3.3.6'
 
+gem 'omniauth-twitter'
+
 group :development, :test do
   gem 'rspec-rails', '~> 3.5'
   gem 'capybara'
