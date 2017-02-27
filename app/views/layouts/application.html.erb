@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>ApiCuriousRoundTwo</title>
-    <%= csrf_meta_tags %>
+<head>
+  <title>ApiCurious</title>
+  <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all' %>
-    <%= javascript_include_tag 'application' %>
-  </head>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+</head>
 
-  <body>
-    <%= yield %>
-  </body>
+<body>
+  <ul class="nav nav-pills">
+    <li role="presentation" class="active"><a href="#">Home</a></li>
+    <li role="presentation"><%= link_to "Sign in with Twitter", "/auth/twitter" %></a></li>
+  </ul>
+</body>
 </html>
