@@ -25,6 +25,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootstrap-sass', '~> 3.3.6'
 
 gem 'omniauth-twitter'
+gem 'figaro'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.5'
