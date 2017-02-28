@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
   def index
-    render 'layouts/application'
+    @presenter = UserPresenter.new(current_user)
   end
 end
