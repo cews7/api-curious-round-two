@@ -26,6 +26,7 @@ gem 'bootstrap-sass', '~> 3.3.6'
 
 gem 'omniauth-twitter'
 gem 'figaro'
+gem 'faraday'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.5'
@@ -33,6 +34,9 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'launchy'
   gem 'database_cleaner'
+  gem 'pry'
+  gem 'vcr'
+  gem 'webmock'
   gem 'byebug', platform: :mri
 end
 
