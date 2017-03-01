@@ -24,9 +24,9 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'bootstrap-sass', '~> 3.3.6'
 
-gem 'omniauth-twitter'
-gem 'figaro'
-gem 'faraday'
+gem 'omniauth-twitter' #authentication 
+gem 'figaro' #yml file to save keys and token
+gem 'faraday' #MAKING HTTP request calling out to api
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.5'
