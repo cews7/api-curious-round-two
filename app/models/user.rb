@@ -1,13 +1,14 @@
 class User < ApplicationRecord
   def self.find_or_create_from_auth(auth)
-   new_user = User.find_or_create_by(uid:auth["uid"])
-   new_user.uid             = auth["uid"]
-   new_user.nickname        = auth["info"]["nickname"]
-   new_user.name            = auth["info"]["name"]
-   new_user.description     = auth["info"]["description"]
-   new_user.followers_count = auth["extra"]["raw_info"]["followers_count"]
-   new_user.friends_count   = auth["extra"]["raw_info"]["friends_count"]
-   new_user.save
-   new_user
+   user = User.find_or_create_by(uid:auth["uid"])
+   user.uid             = auth["uid"]
+   user.nickname        = auth["info"]["nickname"]
+   user.name            = auth["info"]["name"]
+   user.description     = auth["info"]["description"]
+   user.followers_count = auth["extra"]["raw_info"]["followers_count"]
+   user.friends_count   = auth["extra"]["raw_info"]["friends_count"]
+   user.token           = auth["credentials"]["token"]
+   user.save
+   user
   end
 end
