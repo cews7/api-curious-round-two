@@ -1,1 +1,4 @@
-
+<!-- we want to display timeline, followers_count, friends_count, and avatar here -->
+<% if current_user %>
+<%= @presenter.user_info %>
+<% end %>
