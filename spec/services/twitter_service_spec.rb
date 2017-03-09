@@ -7,12 +7,11 @@ describe 'Twitter Service' do
 
         user = OpenStruct.new(
         screen_name: "cews7",
-        token: ENV['TOKEN']
+        token: ENV['TWITTER_ACCESS_TOKEN']
         )
 
         user_info = TwitterService.new(user).user_info
         expect(user_info.class).to eq Hash
-        expect(user.)
       end
     end
   end
