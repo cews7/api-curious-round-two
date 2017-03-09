@@ -39,7 +39,6 @@ group :development, :test do
   gem 'vcr'
   gem 'webmock'
   gem 'byebug', platform: :mri
-  gem 'shoulda-matchers'
 end
 
 group :development do
