@@ -10,8 +10,8 @@ describe 'Twitter Service' do
         token: ENV['TWITTER_ACCESS_TOKEN']
         )
 
-        user_info = TwitterService.new(user).user_info
-        expect(user_info.class).to eq Hash
+        user_followers_count = TwitterService.new(user).user_followers_count
+        expect(user_followers_count.class).to eq Fixnum
       end
     end
   end
