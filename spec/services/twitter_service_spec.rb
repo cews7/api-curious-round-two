@@ -30,4 +30,21 @@ describe 'Twitter Service' do
       end
     end
   end
+
+  context '#user_avatar' do
+    it 'retrieves user avatar' do
+      VCR.use_cassette("avatar") do
+
+        user = OpenStruct.new(
+        screen_name: "cews7",
+        token: ENV['TWITTER_ACCESS_TOKEN'],
+        image: 'sample.jpg'
+        )
+
+        user_avatar = TwitterService.new(user).user_avatar
+        expect(user_avatar.class).to eq String
+        expect(user_avatar).to include ".jpg"
+      end
+    end
+  end
 end
