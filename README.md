@@ -6,4 +6,8 @@
 
 2. Once inside the project, run `rspec`
 
-3. Add more...
+3. run `rails server`
+
+4. go to `localhost:3000`
+
+4. click link `sign in with Twitter`
