@@ -1,4 +1,5 @@
 <!-- we want to display timeline, followers_count, friends_count, and avatar here -->
 <% if current_user %>
-<%= @presenter.user_info %>
+<%= @presenter.user_followers_count %><br>
+<%= image_tag @presenter.user_avatar %>
 <% end %>

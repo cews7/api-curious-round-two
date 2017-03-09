@@ -5,6 +5,7 @@ class User < ApplicationRecord
    user.nickname        = auth["info"]["nickname"]
    user.name            = auth["info"]["name"]
    user.description     = auth["info"]["description"]
+   user.image           = auth["info"]["image"]
    user.followers_count = auth["extra"]["raw_info"]["followers_count"]
    user.friends_count   = auth["extra"]["raw_info"]["friends_count"]
    user.token           = auth["credentials"]["token"]

@@ -1,20 +1,31 @@
+require 'twitter'
+
 class TwitterService
-  attr_reader :user_token, :conn, :nickname
+  attr_reader :client, :nickname
   def initialize(user)
     @nickname    = user.nickname
-    @user_token  = user.token
-    @conn        = Faraday.new(url: "https://api.twitter.com") do |faraday|
-      faraday.adapter Faraday.default_adapter
-      faraday.params[:access_token] = user_token
+    @avatar      = user.image
+    @client      = Twitter::REST::Client.new do |config|
+      config.consumer_key        = "#{ENV['TWITTER_KEY']}"
+      config.consumer_secret     = "#{ENV['TWITTER_SECRET']}"
+      config.access_token        = "#{ENV['TWITTER_ACCESS_TOKEN']}"
+      config.access_token_secret = "#{ENV['TWITTER_ACCESS_TOKEN_SECRET']}"
     end
   end
 
-  def user_info
-    json_parse(conn.get "/1.1/users/show.json?screen_name=#{nickname}")
+  def user_followers_count
+    client.followers("#{nickname}").count
+  end
+
+  def user_following_count
+    client.friends("#{nickname}").count
+  end
+
+  def user_avatar
+    @avatar
   end
 
   def json_parse(user_info)
-    binding.pry
     JSON.parse(user_info.body, symbolize_names: true)
   end
 end
